@@ -15,7 +15,7 @@ public class Navigation : MonoBehaviour
     private bool destinationSet; //목적지 설정이 됐는지 확인하기 위한 bool형 변수 선언
     string fin;                  //목적이 이름을 저장하기 위한 변수
     LineRenderer line;           //맵 상에 경로를 표현하기 위한 LineRenderer타입 변수
-    public GameObject[] Roomlist = new GameObject[25];   //목적지로 설정된 GameObject를 저장하기 위한 배열 선언
+    public GameObject[] Roomlist;   //목적지로 설정된 GameObject를 저장하기 위한 배열 선언
     public bool start = false;
     public String startname = "";
     public Dropdown drop;
@@ -27,6 +27,20 @@ public class Navigation : MonoBehaviour
         line = GetComponent<LineRenderer>();  //line변수에 LineRenderer컴포넌트를 저장
         destinationSet = false;    //초기 목적지 설정 값을 false로 저장
         startname = GameObject.Find("StartPoint").GetComponent<SaveStartPoint>().getPoint();
+
+        if (start == false)
+        {
+            GameObject.Find(this.gameObject.name).transform.position = GameObject.Find(startname).transform.position;
+            GameObject.Find("ARCore Device").transform.position = new Vector3(GameObject.Find(startname).transform.position.x, (float)1.7, GameObject.Find(startname).transform.position.z);
+            GameObject.Find("arrow").transform.position = new Vector3(GameObject.Find(startname).transform.position.x, (float)0.1, GameObject.Find(startname).transform.position.z);
+
+            GameObject.Find(this.gameObject.name).transform.rotation = GameObject.Find(startname).transform.rotation;
+            GameObject.Find("ARCore Device").transform.rotation = GameObject.Find(startname).transform.rotation;
+            //GameObject.Find("arrow").transform.rotation = GameObject.Find(startname).transform.rotation;
+            //GameObject.Find("arrow").transform.Rotate(0, GameObject.Find(startname).transform.rotation.y, 0);
+            start = true;
+        }
+
     }
 
     void OnDrawGizmosSelected()    //경로 표시 메소드
@@ -39,9 +53,9 @@ public class Navigation : MonoBehaviour
         if (line == null)
         {
             line = this.gameObject.AddComponent<LineRenderer>(); //line이 NULL값일 경우 게임오브젝트에 있는 LineRenderer컴포넌트를 정의
-            line.material = new Material(Shader.Find("Sprites/Default")) { color = Color.yellow };  //line변수의 material값 정의
-            line.SetWidth(1.5f, 1.5f); 
-            line.SetColors(Color.yellow, Color.yellow); //line 너비 지정 및 색깔 지정
+            line.material = new Material(Shader.Find("Sprites/Default")) { color = Color.white };  //line변수의 material값 정의
+            line.SetWidth(1f, 1f); 
+            line.SetColors(Color.white, Color.cyan); //line 너비 지정 및 색깔 지정
         }
 
         var path = agent.path;
@@ -59,7 +73,7 @@ public class Navigation : MonoBehaviour
     void Update()                                  //1프레임마다 실행되는 update메소드
     {
 
-        if (start == false)
+        /*if (start == false)
         {
             GameObject.Find(this.gameObject.name).transform.position = GameObject.Find(startname).transform.position;
             GameObject.Find("ARCore Device").transform.position = new Vector3(GameObject.Find(startname).transform.position.x, (float)1.7, GameObject.Find(startname).transform.position.z);
@@ -70,7 +84,9 @@ public class Navigation : MonoBehaviour
             //GameObject.Find("arrow").transform.rotation = GameObject.Find(startname).transform.rotation;
             //GameObject.Find("arrow").transform.Rotate(0, GameObject.Find(startname).transform.rotation.y, 0);
             start = true;
-        }
+        }*/
+
+        GameObject.Find("ARCore Device").transform.position = new Vector3(GameObject.Find("ARCore Device").transform.position.x, GameObject.Find(this.gameObject.name).transform.position.y + (float)1.61, GameObject.Find("ARCore Device").transform.position.z);
 
         for (int k = 0; k < Roomlist.Length; k++)  //Roomlist배열의 길이만큼 for문 실행
         {

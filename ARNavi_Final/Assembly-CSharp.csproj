@@ -55,6 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AppearanceStair.cs" />
+     <Compile Include="Assets\ArrowDirection.cs" />
+     <Compile Include="Assets\ChangeScene.cs" />
      <Compile Include="Assets\ClassRoom.cs" />
      <Compile Include="Assets\Distance.cs" />
      <Compile Include="Assets\DropdownOption.cs" />
@@ -83,7 +86,6 @@
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\PointClickHandler.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\TextureReader.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\TextureReaderApi.cs" />
-     <Compile Include="Assets\GoogleARCore\Examples\HelloAR\Scripts\ArrowDirection.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\HelloAR\Scripts\HelloARController.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ObjectManipulation\Scripts\Gestures\DragGesture.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ObjectManipulation\Scripts\Gestures\DragGestureRecognizer.cs" />

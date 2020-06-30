@@ -14,7 +14,10 @@ public class ArrowDirection : MonoBehaviour
     {
 
         Vector3 targetEulerAngles = targetRot.eulerAngles;     //targetRot의 rotation 값을 저장
-        float rotationToApplyAroundY = targetEulerAngles.y +180 ;    //rotation값중 y값만 float형으로 저장
+
+        float rotationToApplyAroundY = targetEulerAngles.y + GameObject.Find("SpherePointer").transform.eulerAngles.y;// +180 ;    //rotation값중 y값만 float형으로 저장
+        Debug.Log("SpherePointer : " + GameObject.Find("SpherePointer").transform.eulerAngles.y);
+
         float newCamRotAngleY = Mathf.LerpAngle(arrow.transform.eulerAngles.y,
            rotationToApplyAroundY, rotationSmoothingSpeed * Time.deltaTime); //현재 카메라 회전각과 적용하려는 회전각 사이의 보간. 각도가 360도를 초과할 경우 LerpAngle을 사용하여 처리
         Quaternion newCamRotYQuat = Quaternion.Euler(0, newCamRotAngleY, 0); //회전값을 Quaternion값으로 저장.

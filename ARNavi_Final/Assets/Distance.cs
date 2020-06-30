@@ -25,13 +25,13 @@ public class Distance : MonoBehaviour
         //float dist = Vector3.Distance(Distancetool1.transform.position, Distancetool2.transform.position);
         float DtoA = Vector3.Distance(mt.transform.position, Agent.transform.position);
 
-        if((int)DtoA > 20)
+        if((int)DtoA > 10)
         {
-            me.SetActive(false);
+            me.GetComponent<MeshRenderer>().enabled = false;
         }
         else
         {
-            me.SetActive(true);
+            me.GetComponent<MeshRenderer>().enabled = true;
         }
         
     }
