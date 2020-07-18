@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SaveStartPoint : MonoBehaviour
 {
-    public string Startpoint = "";
+    public string Startpoint = null;
 
     void Awake()
     {

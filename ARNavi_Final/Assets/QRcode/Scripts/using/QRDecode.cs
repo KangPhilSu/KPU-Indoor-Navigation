@@ -31,7 +31,8 @@ public class QRDecode : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width / 2, Screen.height * 9 / 10, Screen.width / 2, Screen.height / 10), "START", gStyle))
         {
             //SceneManager.LoadScene(1);
-            Application.LoadLevel(1);
+            if(!GameObject.Find("StartPoint").GetComponent<SaveStartPoint>().getPoint().Equals(null))
+                Application.LoadLevel(1);
         }
 
     }

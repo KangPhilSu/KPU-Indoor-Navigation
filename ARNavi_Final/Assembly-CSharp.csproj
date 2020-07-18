@@ -55,13 +55,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AppearanceStair.cs" />
-     <Compile Include="Assets\ArrowDirection.cs" />
-     <Compile Include="Assets\ChangeScene.cs" />
-     <Compile Include="Assets\ClassRoom.cs" />
-     <Compile Include="Assets\Distance.cs" />
-     <Compile Include="Assets\DropdownOption.cs" />
-     <Compile Include="Assets\FollowTarget.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\AppearanceStair.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\ARController.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\ArrowDirection.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\ChangeScene.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\ClassRoom.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\DropdownOption.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\HideObject.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\Navigation.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\ShowInformation.cs" />
+     <Compile Include="Assets\ARNavigation\Scripts\TargetAgent.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\AugmentedFaces\Scripts\ARCoreAugmentedFaceMeshFilter.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\AugmentedFaces\Scripts\ARCoreAugmentedFaceRig.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\AugmentedFaces\Scripts\AugmentedFacesExampleController.cs" />
@@ -86,7 +89,6 @@
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\PointClickHandler.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\TextureReader.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\TextureReaderApi.cs" />
-     <Compile Include="Assets\GoogleARCore\Examples\HelloAR\Scripts\HelloARController.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ObjectManipulation\Scripts\Gestures\DragGesture.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ObjectManipulation\Scripts\Gestures\DragGestureRecognizer.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ObjectManipulation\Scripts\Gestures\Gesture.cs" />
@@ -242,11 +244,6 @@
      <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSession.cs" />
      <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSessionStatus.cs" />
      <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPTrackingState.cs" />
-     <Compile Include="Assets\MoveTo.cs" />
-     <Compile Include="Assets\Navigation.cs" />
-     <Compile Include="Assets\NavigationController.cs" />
-     <Compile Include="Assets\Penzoom.cs" />
-     <Compile Include="Assets\PR.cs" />
      <Compile Include="Assets\QRcode\Plugins\Loom\Loom.cs" />
      <Compile Include="Assets\QRcode\Scripts\CameraPermissionsController.cs" />
      <Compile Include="Assets\QRcode\Scripts\CameraPlaneController.cs" />
@@ -263,11 +260,6 @@
      <Compile Include="Assets\QRcode\Scripts\using\QRDecode.cs" />
      <Compile Include="Assets\QRcode\Scripts\using\SaveStartPoint.cs" />
      <Compile Include="Assets\QRcode\Scripts\Utility.cs" />
-     <Compile Include="Assets\Rotate.cs" />
-     <Compile Include="Assets\show.cs" />
-     <Compile Include="Assets\show1.cs" />
-     <Compile Include="Assets\Touch.cs" />
-     <Compile Include="Assets\UpdateNavigation.cs" />
      <None Include="Assets\GoogleARCore\Examples\Common\Materials\Shaders\PlaneGrid.shader" />
      <None Include="Assets\GoogleARCore\Examples\Common\Materials\Shaders\MobileDiffuseWithLightEstimation.shader" />
      <None Include="Assets\GoogleARCore\SDK\Materials\ARBackground.shader" />
